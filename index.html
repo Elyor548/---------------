@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>База Знаний и Регламент Промо-отдела | 35' Health Club Ташкент</title>
+  <style>
+    /* ==========================================================================
+       СТИЛИ: ЯРКИЙ, СВЕТЛЫЙ, ЧИСТЫЙ СТИЛЬ 35' HEALTH CLUB
+       100% АВТОНОМНОСТЬ (БЕЗ ВНЕШНИХ CDN И ШРИФТОВ, МАКСИМАЛЬНАЯ СКОРОСТЬ)
+       ========================================================================== */
+    :root {
+      --primary: #FF5722;           /* Энергичный кораллово-оранжевый 35HC */
+      --primary-hover: #E64A19;
+      --primary-light: #FFF0EB;
+      --primary-border: #FFCCBC;
+      
+      --secondary: #0284C7;         /* Спортивный лазурный */
+      --secondary-hover: #0369A1;
+      --secondary-light: #E0F2FE;
+      --secondary-border: #BAE6FD;
+      
+      --success: #10B981;           /* Изумрудный для подтверждений */
+      --success-hover: #059669;
+      --success-light: #ECFDF5;
+      --success-border: #A7F3D0;
+      
+      --warning: #F59E0B;           /* Янтарный для внимания */
+      --warning-light: #FEF3C7;
+      --warning-border: #FDE68A;
+      
+      --danger: #EF4444;            /* Рубиново-красный для штрафов и запретов */
+      --danger-hover: #DC2626;
+      --danger-light: #FEF2F2;
+      --danger-border: #FECACA;
+      
+      --bg-main: #F8FAFC;           /* Светлый ультра-чистый фон */
+      --bg-card: #FFFFFF;           /* Чисто-белые карточки */
+      --bg-muted: #F1F5F9;
+      --border-color: #E2E8F0;
+      
+      --text-dark: #0F172A;         /* Максимальная читаемость */
+      --text-muted: #475569;
+      --text-light: #64748B;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-dark);
+      line-height: 1.55;
+      font-size: 15px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --------------------------------------------------------------------------
+       ВЕРХНЯЯ ШАПКА (HEADER)
+       -------------------------------------------------------------------------- */
+    header.main-header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-content {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-badge {
+      background: linear-gradient(135deg, #FF5722 0%, #FF8A65 100%);
+      color: #FFFFFF;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 22px;
+      letter-spacing: -1px;
+      box-shadow: 0 4px 10px rgba(255, 87, 34, 0.3);
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--text-dark);
+      letter-spacing: 0.2px;
+      line-height: 1.1;
+    }
+
+    .logo-subtitle {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--primary);
+      letter-spacing: 1.5px;
+      margin-top: 2px;
+    }
+
+    .header-quick-stats {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .stat-pill {
+      background: var(--bg-muted);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      padding: 5px 12px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .stat-pill strong {
+      color: var(--primary);
+    }
+
+    .stat-pill.success {
+      background: var(--success-light);
+      border-color: var(--success-border);
+      color: #065F46;
+    }
+    .stat-pill.success strong {
+      color: var(--success);
+    }
+
+    .stat-pill.danger {
+      background: var(--danger-light);
+      border-color: var(--danger-border);
+      color: #991B1B;
+    }
+    .stat-pill.danger strong {
+      color: var(--danger);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      font-size: 13.5px;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-secondary {
+      background: var(--secondary);
+      color: #FFFFFF;
+      box-shadow: 0 2px 5px rgba(2, 132, 199, 0.25);
+    }
+    .btn-secondary:hover {
+      background: var(--secondary-hover);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: var(--bg-muted);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 8px 12px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    /* --------------------------------------------------------------------------
+       ОСНОВНОЙ МАКЕТ: САЙДБАР + КОНТЕНТ
+       -------------------------------------------------------------------------- */
+    .app-layout {
+      max-width: 1440px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      flex: 1;
+      position: relative;
+    }
+
+    aside.sidebar {
+      width: 310px;
+      background: #FFFFFF;
+      border-right: 1px solid var(--border-color);
+      padding: 20px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: sticky;
+      top: 69px;
+      height: calc(100vh - 69px);
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+
+    .nav-group-title {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--text-light);
+      letter-spacing: 1px;
+      padding: 12px 12px 4px 12px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      user-select: none;
+      position: relative;
+    }
+
+    .nav-item:hover {
+      background: var(--bg-muted);
+      color: var(--text-dark);
+    }
+
+    .nav-item.active {
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .nav-item.active::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      bottom: 6px;
+      width: 4px;
+      background: var(--primary);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .nav-icon {
+      font-size: 18px;
+      width: 22px;
+      text-align: center;
+    }
+
+    .nav-badge {
+      margin-left: auto;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: var(--radius-full);
+      background: var(--bg-muted);
+      color: var(--text-light);
+    }
+
+    .nav-item.active .nav-badge {
+      background: #FFFFFF;
+      color: var(--primary);
+    }
+
+    main.content-area {
+      flex: 1;
+      padding: 28px 36px;
+      overflow-y: auto;
+      max-width: 1130px;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --------------------------------------------------------------------------
+       КАРТОЧКИ, БАННЕРЫ И ТИПОГРАФИКА
+       -------------------------------------------------------------------------- */
+    .page-header {
+      margin-bottom: 24px;
+    }
+
+    .page-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .page-description {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .alert-banner {
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 14.5px;
+      line-height: 1.5;
+    }
+
+    .alert-banner.warning {
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      color: #92400E;
+    }
+
+    .alert-banner.danger {
+      background: var(--danger-light);
+      border: 1px solid var(--danger-border);
+      color: #991B1B;
+    }
+
+    .alert-banner.info {
+      background: var(--secondary-light);
+      border: 1px solid var(--secondary-border);
+      color: #075985;
+    }
+
+    .alert-icon {
+      font-size: 22px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+    }
+    .badge-primary { background: var(--primary-light); color: var(--primary); }
+    .badge-success { background: var(--success-light); color: var(--success); }
+    .badge-danger { background: var(--danger-light); color: var(--danger); }
+    .badge-secondary { background: var(--secondary-light); color: var(--secondary); }
+    .badge-warning { background: var(--warning-light); color: var(--warning); }
+
+    .url-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-muted);
+      border: 1px solid var(--border-color);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      font-family: monospace;
+      font-size: 12.5px;
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.15s ease;
+    }
+    .url-chip:hover {
+      background: var(--secondary-light);
+      border-color: var(--secondary-border);
+      color: var(--secondary-hover);
+    }
+
+    /* Стили шагов открытия смены */
+    .step-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      margin-bottom: 20px;
+      border-left: 6px solid var(--primary);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .step-card.step-accent { border-left-color: var(--secondary); }
+    .step-card.step-success { border-left-color: var(--success); }
+    .step-card.step-warning { border-left-color: var(--warning); }
+    .step-card.step-danger { border-left-color: var(--danger); }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .step-num-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-accent .step-num { background: var(--secondary-light); color: var(--secondary); }
+    .step-success .step-num { background: var(--success-light); color: var(--success); }
+    .step-warning .step-num { background: var(--warning-light); color: var(--warning); }
+    .step-danger .step-num { background: var(--danger-light); color: var(--danger); }
+
+    .step-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-dark);
+    }
+
+    .step-meta {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-light);
+    }
+
+    .step-body {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .step-body strong {
+      color: var(--text-dark);
+    }
+
+    .sub-steps-list {
+      margin: 10px 0 14px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      color: var(--text-muted);
+    }
+
+    .sub-steps-list li strong {
+      color: var(--text-dark);
+    }
+
+    .step-penalty-box {
+      margin-top: 14px;
+      padding: 10px 14px;
+      background: var(--danger-light);
+      border: 1px solid var(--danger-border);
+      border-radius: var(--radius-sm);
+      font-size: 13.5px;
+      color: #991B1B;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+    }
+
+    .code-template {
+      background: #0F172A;
+      border: 1px solid #1E293B;
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 13px;
+      color: #F8FAFC;
+      margin-top: 12px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+
+    /* Блок фото-примера */
+    .photo-example-container {
+      background: var(--bg-muted);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .photo-example-container {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .photo-example-img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: var(--radius-md);
+      border: 3px solid #10B981;
+      box-shadow: var(--shadow-md);
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-requirements-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .req-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #FFFFFF;
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+
+    .req-icon {
+      font-size: 18px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    /* Таблицы */
+    .table-container {
+      overflow-x: auto;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      background: #FFFFFF;
+      margin-top: 12px;
+    }
+
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    table.data-table th {
+      background: #F8FAFC;
+      color: var(--text-dark);
+      font-weight: 700;
+      padding: 12px 16px;
+      border-bottom: 2px solid var(--border-color);
+      white-space: nowrap;
+    }
+
+    table.data-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-muted);
+    }
+
+    table.data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    table.data-table tr:hover td {
+      background: #F8FAFC;
+    }
+
+    /* Аккордеоны FAQ */
+    .faq-item {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: border-color 0.15s ease;
+    }
+
+    .faq-item:hover {
+      border-color: #CBD5E1;
+    }
+
+    .faq-header {
+      padding: 16px 20px;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text-dark);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+
+    .faq-header::after {
+      content: "▼";
+      font-size: 11px;
+      color: var(--text-light);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.open .faq-header::after {
+      transform: rotate(180deg);
+    }
+
+    .faq-body {
+      padding: 0 20px 18px 20px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      display: none;
+    }
+
+    .faq-item.open .faq-body {
+      display: block;
+    }
+
+    /* Интерактивный чек-лист */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 18px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      user-select: none;
+    }
+
+    .checklist-item:hover {
+      background: var(--bg-muted);
+      border-color: #CBD5E1;
+    }
+
+    .checklist-item.done {
+      background: var(--success-light);
+      border-color: var(--success-border);
+    }
+
+    .checklist-item.done .checklist-text {
+      color: #065F46;
+      text-decoration: line-through;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      margin-top: 3px;
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    .checklist-text {
+      font-size: 14.5px;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    /* Мобильная адаптивность */
+    @media (max-width: 992px) {
+      .header-quick-stats { display: none; }
+      .app-layout { flex-direction: column; }
+      aside.sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        display: none;
+      }
+      aside.sidebar.mobile-open { display: flex; }
+      .mobile-menu-btn { display: block; }
+      main.content-area { padding: 20px 16px; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ВЕРХНЯЯ ШАПКА -->
+  <header class="main-header">
+    <div class="header-content">
+      <div class="brand-section">
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" title="Открыть меню">☰</button>
+        <div class="logo-badge">35</div>
+        <div class="logo-text">
+          <div class="logo-title">35' Health Club</div>
+          <div class="logo-subtitle">ТАШКЕНТ • РЕГЛАМЕНТ ПРОМОУТЕРОВ</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ОСНОВНОЙ КОНТЕЙНЕР -->
+  <div class="app-layout">
+
+    <!-- БОКОВОЕ МЕНЮ (SIDEBAR) -->
+    <aside class="sidebar" id="appSidebar">
+      <div class="nav-group-title">Регламент смен</div>
+      <div class="nav-item active" onclick="switchTab('tab-opening')">
+        <span class="nav-icon">🚀</span>
+        <span>Открытие смены (7 шагов)</span>
+        <span class="nav-badge">Главное</span>
+      </div>
+      <div class="nav-item" onclick="switchTab('tab-closing')">
+        <span class="nav-icon">🏁</span>
+        <span>Закрытие смены</span>
+        <span class="nav-badge">Итоги</span>
+      </div>
+      <div class="nav-item" onclick="switchTab('tab-breaks')">
+        <span class="nav-icon">☕</span>
+        <span>Перерывы и обед</span>
+        <span class="nav-badge">30 мин</span>
+      </div>
+
+      <div class="nav-group-title">Работа с клиентами</div>
+      <div class="nav-item" onclick="switchTab('tab-workflow')">
+        <span class="nav-icon">📲</span>
+        <span>Ввод Лида, Записи и Визита</span>
+        <span class="nav-badge">Инструкция</span>
+      </div>
+      <div class="nav-item" onclick="switchTab('tab-rules')">
+        <span class="nav-icon">🎯</span>
+        <span>Правила точки и возраст 21+</span>
+        <span class="nav-badge">Сервис</span>
+      </div>
+      <div class="nav-item" onclick="switchTab('tab-links')">
+        <span class="nav-icon">🔗</span>
+        <span>Карта прямых ссылок (URL)</span>
+        <span class="nav-badge">CRM</span>
+      </div>
+
+      <div class="nav-group-title">Дисциплина и мотивация</div>
+      <div class="nav-item" onclick="switchTab('tab-fines')">
+        <span class="nav-icon">⛔</span>
+        <span>Штрафная сетка</span>
+        <span class="nav-badge" style="color:var(--danger); font-weight:800;">Штрафы</span>
+      </div>
+      <div class="nav-item" onclick="switchTab('tab-kpi')">
+        <span class="nav-icon">📊</span>
+        <span>KPI и компенсация плана</span>
+        <span class="nav-badge">Норматив</span>
+      </div>
+      <div class="nav-item" onclick="switchTab('tab-trainee')">
+        <span class="nav-icon">🎓</span>
+        <span>Стажировка (7 дней)</span>
+        <span class="nav-badge">Обучение</span>
+      </div>
+
+      <div class="nav-group-title">Инструменты</div>
+      <div class="nav-item" onclick="switchTab('tab-checklist')">
+        <span class="nav-icon">✅</span>
+        <span>Интерактивный чек-лист</span>
+        <span class="nav-badge">Контроль</span>
+      </div>
+    </aside>
+
+    <!-- КОНТЕНТНАЯ ЗОНА -->
+    <main class="content-area" id="mainDocArea">
+
+      <!-- ====================================================================
+           ВКЛАДКА 1: ДОСКОНАЛЬНОЕ ОТКРЫТИЕ СМЕНЫ
+           ==================================================================== -->
+      <section id="tab-opening" class="tab-content active">
+        <div class="page-header">
+          <h1 class="page-title">🚀 Доскональный регламент: Открытие смены</h1>
+          <p class="page-description">Пошаговый стандарт выхода промо-консультанта на смену в веб-приложении. 7 последовательных шагов.</p>
+        </div>
+
+        <div class="alert-banner warning">
+          <span class="alert-icon">⚠️</span>
+          <div>
+            <strong>Жесткое требование дисциплины:</strong> Открытие смены фиксируется строго через веб-приложение непосредственно внутри филиала с включенной геолокацией и в брендированной форме клуба. Открытие смены «из дома», «из транспорта» или «задним числом» расценивается как обман системы (фрод) и наказывается штрафами.
+          </div>
+        </div>
+
+        <!-- Карточка таймлайна смен -->
+        <div class="card" style="border-top: 4px solid var(--secondary);">
+          <div class="card-title">⏰ Тайминг смен и минимальная выработка</div>
+          <div class="grid-2">
+            <div>
+              <div style="font-weight:700; color:var(--text-dark); margin-bottom:4px;">🌅 Утренняя смена: 08:00 – 13:00</div>
+              <p style="font-size:13.5px; color:var(--text-muted);">
+                Прибытие на филиал: <strong>строго до 07:50</strong>.<br>
+                Отработка: <strong>не менее 5 часов</strong>. Обед: 30 минут.
+              </p>
+            </div>
+            <div>
+              <div style="font-weight:700; color:var(--text-dark); margin-bottom:4px;">🌆 Вечерняя смена: 16:00 – 21:00</div>
+              <p style="font-size:13.5px; color:var(--text-muted);">
+                Прибытие на филиал: <strong>строго до 15:50</strong>.<br>
+                Отработка: <strong>не менее 5 часов</strong>. Обед: 30 минут.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 Шагов открытия смены -->
+
+        <!-- Шаг 1 -->
+        <div class="step-card">
+          <div class="step-header">
+            <div class="step-num-title">
+              <span class="step-num">01</span>
+              <div class="step-title">Прибытие на закрепленный филиал (за 10–15 минут)</div>
+            </div>
+            <div class="step-meta">Утро: 07:45–07:50 | Вечер: 15:45–15:50</div>
+          </div>
+          <div class="step-body">
+            Промоутер обязан прибыть на закрепленный филиал заблаговременно. Это время выделяется для подготовки рабочего процесса:
+            <ul class="sub-steps-list">
+              <li>Надеть манишку (фирменную одежду клуба 35 Health Club).</li>
+              <li>Проверить заряд смартфона (минимум 60% для стабильной работы геопозиции и CRM).</li>
+              <li>Взять чистые бланки консультационных листов и промо-материалы.</li>
+              <li>Убедиться, что до 08:00 (или 16:00) смена будет открыта в системе.</li>
+            </ul>
+          </div>
+          <div class="step-penalty-box">
+            ⛔ <strong>Штраф за опоздание:</strong> 50 000 сум (при опоздании без предупреждения Тим-лида за 24 часа).
+          </div>
+        </div>
+
+        <!-- Шаг 2 -->
+        <div class="step-card step-accent">
+          <div class="step-header">
+            <div class="step-num-title">
+              <span class="step-num">02</span>
+              <div class="step-title">Вход на рабочий стол промоутера</div>
+            </div>
+            <a href="https://appuz.35minut.club/promo-desk" target="_blank" class="url-chip">appuz.35minut.club/promo-desk ↗</a>
+          </div>
+          <div class="step-body">
+            Откройте браузер на смартфоне (Safari на iOS, Chrome на Android) и перейдите на рабочий стол:
+            <ul class="sub-steps-list">
+              <li>Введите ваш персональный логин и пароль.</li>
+              <li>В верхнем блоке убедитесь, что указано ваше ФИО и ваш правильный закрепленный филиал (Лисунова, Сергели, Бадамзар, Чиланзар и др.).</li>
+              <li>Если филиал отображается неверно — немедленно свяжитесь с Тим-лидом, не открывая смену.</li>
+            </ul>
+          </div>
+          <div class="step-penalty-box">
+            ⛔ <strong>Штраф за самовольную смену филиала:</strong> 50 000 сум.
+          </div>
+        </div>
+
+        <!-- Шаг 3 -->
+        <div class="step-card">
+          <div class="step-header">
+            <div class="step-num-title">
+              <span class="step-num">03</span>
+              <div class="step-title">Переход в экран «Открыть / Закрыть смену»</div>
+            </div>
+            <a href="https://appuz.35minut.club/promo-desk/shift/create" target="_blank" class="url-chip">/promo-desk/shift/create ↗</a>
+          </div>
+          <div class="step-body">
+            На главном экране нажмите карточку <strong>«Открыть / Закрыть смену»</strong>. Система автоматически распознает отсутствие открытой смены и переведет форму в режим создания смены:
+            <ul class="sub-steps-list">
+              <li>Поле <strong>«Дата»</strong>: автоматически выставляется текущая сегодняшняя дата.</li>
+              <li>Поле <strong>«Время начала работы»</strong>: выставляется текущее точное системное время.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Шаг 4 -->
+        <div class="step-card step-warning">
+          <div class="step-header">
+            <div class="step-num-title">
+              <span class="step-num">04</span>
+              <div class="step-title">Фиксация GPS-геолокации</div>
+            </div>
+            <span class="badge badge-warning">Радиус: 300–500 м</span>
+          </div>
+          <div class="step-body">
+            При открытии смены промоутер должен находиться непосредственно на территории своего филиала (в радиусе 300–500 метров).
+          </div>
+          <div class="step-penalty-box">
+            ⛔ <strong>Штраф за открытие без геолокации:</strong> 40 000 сум.
+          </div>
+        </div>
+
+        <!-- Шаг 5: ФОТОФИКСАЦИЯ -->
+        <div class="step-card step-danger">
+          <div class="step-header">
+            <div class="step-num-title">
+              <span class="step-num">05</span>
+              <div class="step-title">Фотофиксация: Селфи в манишке внутри филиала с логотипом</div>
+            </div>
+            <span class="badge badge-danger">Обязательное живое селфи</span>
+          </div>
+          <div class="step-body">
+            В поле <strong>«Фото фиксации рабочего места»</strong> нажмите кнопку камеры и сделайте фото в реальном времени.
+
+            <div style="margin-top:14px; display:flex; flex-direction:column; gap:10px;">
+              <div class="req-item">
+                <span class="req-icon">🎽</span>
+                <div>
+                  <strong>1. Обязательно в манишке:</strong><br>
+                  Промоутер обязан быть одет в чистую фирменную манишку / футболку клуба. Форма должна быть отчетливо видна в кадре.
+                </div>
+              </div>
+
+              <div class="req-item">
+                <span class="req-icon">🏢</span>
+                <div>
+                  <strong>2. Обязательно внутри филиала:</strong><br>
+                  Селфи делается строго внутри зала клуба. В кадре должен быть виден интерьер зала, тренажеры или промо-стойка.
+                </div>
+              </div>
+
+              <div class="req-item">
+                <span class="req-icon">🏷️</span>
+                <div>
+                  <strong>3. Обязательно виден логотип:</strong><br>
+                  В кадре должен быть отчетливо виден фирменный логотип <strong>«35» / «35 Health Club»</strong> (на брендволле, стене, стекле или форме).
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:14px; font-size:13.5px; color:#991B1B;">
+              ❌ <strong>Категорически запрещено:</strong> загружать старые фото или скриншоты из галереи, фоткаться на улице, в транспорте или без манишки.
+            </div>
+          </div>
+          <div class="step-penalty-box">
+            ⛔ <strong>Штраф за фото без манишки / не на филиале:</strong> 50 000 сум + отстранение для переодевания.
+          </div>
+        </div>
+
+        <!-- Шаг 6 -->
+        <div class="step-card step-success">
+          <div class="step-header">
+            <div class="step-num-title">
+              <span class="step-num">06</span>
+              <div class="step-title">Постановка числового плана на 5 часов</div>
+            </div>
+            <span class="badge badge-success">Норматив: минимум 2 визита</span>
+          </div>
+          <div class="step-body">
+            В блоке «План на смену» внесите нормативы на предстоящие 5 часов работы:
+            <ul class="sub-steps-list">
+              <li><strong>Визиты (число):</strong> цель по доведению людей до клуба (норматив — <strong>не менее 2 успешных визитов</strong>).</li>
+              <li><strong>Записи (число):</strong> количество людей, записанных на пробную тренировку на будущие дни.</li>
+              <li><strong>Лиды (число):</strong> общее число целевых контактов.</li>
+              <li><strong>Поле «Заметка / Примечание»:</strong> статус готовности к смене (например: <em>«На месте, манишка надета, раздаточный материал на стойке, трафик плотный»</em>).</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Шаг 7 -->
+        <div class="step-card step-accent">
+          <div class="step-header">
+            <div class="step-num-title">
+              <span class="step-num">07</span>
+              <div class="step-title">Нажатие кнопки «🚀 Открыть смену» и автоотчет в Telegram</div>
+            </div>
+            <span class="badge badge-secondary">Группа: -1003779659120</span>
+          </div>
+          <div class="step-body">
+            Нажмите кнопку <strong>«🚀 Открыть смену»</strong>. Система запустит таймер смены, переведет статус в активный, а в рабочую Telegram-группу промо-отдела мгновенно улетит служебный отчет:
+            <div class="code-template">🟢 Смена открыта!
+👤 Промоутер: Саетбек Абдувалиев
+🏢 Филиал: Лисунова
+📅 Дата и время: 27.09.2026 08:00
+📊 План на смену:
+• Визиты: 2
+• Записи: 5
+• Лиды: 10
+💬 Заметка: Вышел на точку в манишке, промо-материалы готовы, поток людей есть
+#открытие_смены #Лисунова #промоутер_Саетбек
+[Прикрепленное селфи промоутера в манишке внутри зала с логотипом]</div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ====================================================================
+           ВКЛАДКА 2: ЗАКРЫТИЕ СМЕНЫ
+           ==================================================================== -->
+      <section id="tab-closing" class="tab-content">
+        <div class="page-header">
+          <h1 class="page-title">🏁 Доскональный регламент: Закрытие смены</h1>
+          <p class="page-description">Порядок сдачи смены, подведения итогов дня и внесения факта после отработки 5 часов.</p>
+        </div>
+
+        <div class="card" style="border-top: 4px solid var(--primary);">
+          <div class="card-title">1. Переход в форму закрытия и ввод факта (План vs Факт)</div>
+          <p style="font-size:14px; color:var(--text-muted); line-height:1.6;">
+            По окончании 5 часов работы откройте в браузере страницу смены: <a href="https://appuz.35minut.club/promo-desk/shift/create" target="_blank" class="url-chip">/promo-desk/shift/create</a>. Система автоматически отобразит экран в режиме <strong>«Закрытие смены»</strong>:
+          </p>
+          <ul class="sub-steps-list">
+            <li>Дата и точное время закрытия фиксируются системой автоматически.</li>
+            <li>Напротив каждого пункта утреннего плана введите фактический результат:
+              <br>• <em>«Визиты: План [ 2 ] ➔ Факт: [ 3 ]»</em>
+              <br>• <em>«Записи: План [ 5 ] ➔ Факт: [ 6 ]»</em>
+              <br>• <em>«Лиды: План [ 10 ] ➔ Факт: [ 12 ]»</em>
+            </li>
+            <li>В поле <strong>«Итоги дня»</strong> напишите краткий комментарий: как прошел день, какой был трафик, основные результаты.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="border-top: 4px solid var(--success);">
+          <div class="card-title">2. Нажатие кнопки «🏁 Закрыть смену» и автоотчет в Telegram</div>
+          <p style="font-size:14px; color:var(--text-muted); line-height:1.6;">
+            Нажмите кнопку <strong>«🏁 Закрыть смену»</strong>. Система автоматически рассчитывает фактически отработанное время смены. Если отработано менее 5 часов — система фиксирует досрочный уход. В Telegram-группу промо-отдела уходит итоговый отчет:
+          </p>
+          <div class="code-template">🔴 Смена закрыта!
+👤 Промоутер: Саетбек Абдувалиев
+🏢 Филиал: Лисунова
+⏱ Отработано: 5 ч. 15 мин. (08:00 — 13:15)
+📈 Итоги дня (План / Факт):
+• Визиты: План 2 | Факт 3
+• Записи: План 5 | Факт 6
+• Лиды: План 10 | Факт 12
+💬 Итоги: План по визитам выполнен, отработал активно
+#закрытие_смены #Лисунова #промоутер_Саетбек</div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           ВКЛАДКА 3: ПЕРЕРЫВЫ И ОБЕД
+           ==================================================================== -->
+      <section id="tab-breaks" class="tab-content">
+        <div class="page-header">
+          <h1 class="page-title">☕ Регламент перерывов и обеда</h1>
+          <p class="page-description">Нормативы отдыха промоутера и правила фиксации перерывов через приложение.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Нормативы перерывов</div>
+          <ul style="padding-left:18px; font-size:14px; color:var(--text-muted); display:flex; flex-direction:column; gap:10px;">
+            <li><strong>Обеденный перерыв:</strong> 1 раз за смену продолжительностью <strong>строго 30 минут</strong>.</li>
+            <li><strong>Короткие перерывы:</strong> 3 раза по <strong>5 минут</strong> (для питья воды и санитарных нужд).</li>
+            <li>Каждый уход на отдых обязательно фиксируется в приложении: <a href="https://appuz.35minut.club/promo-desk/break/create" target="_blank" class="url-chip">/promo-desk/break/create ↗</a>. Нажмите «Начать обед» или «Начать перерыв», а по возвращении нажмите «Завершить».</li>
+            <li>Рекомендуется распределять перерывы равномерно в течение смены, не прерывая работу в пиковые часы входящего трафика.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           ВКЛАДКА 4: ВВОД ДАННЫХ (ЛИД, ЗАПИСЬ, ВИЗИТ)
+           ==================================================================== -->
+      <section id="tab-workflow" class="tab-content">
+        <div class="page-header">
+          <h1 class="page-title">📲 Пошаговая инструкция: Ввод Лида, Записи и Визита</h1>
+          <p class="page-description">Как правильно вносить данные в систему прямо во время диалога с клиентом на промо-точке.</p>
+        </div>
+
+        <div class="alert-banner info">
+          <span class="alert-icon">💡</span>
+          <div>
+            <strong>Главное правило работы:</strong> Вносите клиентов в приложение <strong>сразу на месте</strong> во время общения. Записывать на бумажки или «заводить вечером дома» запрещено — это приводит к потере номеров и штрафам за фрод.
+          </div>
+        </div>
+
+        <!-- 1. Ввести Лид -->
+        <div class="card" style="border-left: 5px solid var(--primary);">
+          <div class="card-title">1. Ввод Лида (Первичный контакт)</div>
+          <div style="font-size:13px; color:var(--text-light); margin-bottom:10px;">
+            URL: <a href="https://appuz.35minut.club/promo-desk/lead/create" target="_blank" class="url-chip">https://appuz.35minut.club/promo-desk/lead/create</a>
+          </div>
+          <p style="font-size:14px; color:var(--text-muted); line-height:1.6;">
+            Используется, когда человек проявил интерес, но пока не готов записаться на конкретное время:
+          </p>
+          <ul class="sub-steps-list">
+            <li><strong>Имя клиента:</strong> введите реальное имя человека (например: <em>Азиза</em>).</li>
+            <li><strong>Телефон:</strong> введите номер Узбекистана по маске <code>+998 XX XXX XX XX</code>.</li>
+            <li><strong>Филиал:</strong> выберите закрепленный филиал из выпадающего списка.</li>
+            <li><strong>Цель:</strong> выберите цель клиента (похудение, здоровье спины, тонус, набор массы).</li>
+            <li><strong>Примечание:</strong> напишите важную деталь диалога (например: <em>«Хочет ходить с мужем по вечерам»</em>).</li>
+          </ul>
+          <p style="font-size:13.5px; color:var(--text-dark); margin-top:8px;">
+            ➔ Контакт автоматически отправляется в amoCRM в воронку «Promo Ref» на этап «promo ref» с привязкой вашего ФИО, а в Telegram-группу уходит уведомление с тегом <code>#лид</code>.
+          </p>
+        </div>
+
+        <!-- 2. Ввести Запись -->
+        <div class="card" style="border-left: 5px solid var(--secondary);">
+          <div class="card-title">2. Ввод Записи (Клиент согласовал дату и время)</div>
+          <div style="font-size:13px; color:var(--text-light); margin-bottom:10px;">
+            URL: <a href="https://appuz.35minut.club/promo-desk/booking/create" target="_blank" class="url-chip">https://appuz.35minut.club/promo-desk/booking/create</a>
+          </div>
+          <p style="font-size:14px; color:var(--text-muted); line-height:1.6;">
+            Используется, когда человек четко выбрал день и час для пробного занятия:
+          </p>
+          <ul class="sub-steps-list">
+            <li>Заполняются контактные данные и выбирается дата и точное время запланированного визита.</li>
+            <li>В Telegram-группу отправляется текстовое уведомление с тегом <code>#запись</code>.</li>
+          </ul>
+        </div>
+
+        <!-- 3. Ввести Визит -->
+        <div class="card" style="border-left: 5px solid var(--success);">
+          <div class="card-title">3. Ввод Визита (Клиент пришел в клуб прямо сейчас)</div>
+          <div style="font-size:13px; color:var(--text-light); margin-bottom:10px;">
+            URL: <a href="https://appuz.35minut.club/promo-desk/visit/create" target="_blank" class="url-chip">https://appuz.35minut.club/promo-desk/visit/create</a>
+          </div>
+          <p style="font-size:14px; color:var(--text-muted); line-height:1.6;">
+            <strong>Самое важное действие промоутера, приносящее максимальный доход:</strong>
+          </p>
+          <ul class="sub-steps-list">
+            <li>Промоутер лично заводит клиента в клуб на диагностику и пробную тренировку.</li>
+            <li><strong>Обязательно прикрепляется 2 фото:</strong>
+              <br>1) Фото чека/распечатки анализатора состава тела <strong>Tanita</strong>.
+              <br>2) Фото заполненного <strong>Консультационного листа</strong>.
+            </li>
+            <li>Указывается дежурный тренер смены (из списка с поиском), пол, цель, язык и возраст клиента.</li>
+          </ul>
+          <p style="font-size:13.5px; color:var(--text-dark); margin-top:8px;">
+            ➔ В Telegram отправляется фото-отчет с тегом <code>#визит</code>, а визит засчитывается в ваш KPI.
+          </p>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           ВКЛАДКА 5: СТАНДАРТЫ И ВОЗРАСТ 21+
+           ==================================================================== -->
+      <section id="tab-rules" class="tab-content">
+        <div class="page-header">
+          <h1 class="page-title">🎯 Стандарты точки и возрастной ценз (21+)</h1>
+          <p class="page-description">Культура обслуживания, внешний вид промоутера и правила фильтрации целевой аудитории.</p>
+        </div>
+
+        <div class="alert-banner danger">
+          <span class="alert-icon">⛔</span>
+          <div>
+            <strong style="font-size:16px;">ЖЕСТКИЙ ВОЗРАСТНОЙ ЦЕНЗ: СТРОГО 21+</strong><br>
+            В клубах 35 Health Club тренируются взрослые платежеспособные клиенты. <strong>СТРОГО ЗАПРЕЩЕНО</strong> заводить, записывать или вносить в CRM лиц моложе 21 года. 
+            <br>Перед заполнением формы промоутер обязан вежливо спросить: <em>«Подскажите, пожалуйста, вам уже есть 21 год?»</em>.
+            <br>⚠️ <em>Попытка завести школьника или студента младше 21 года ради выполнения плана приравнивается к фроду со штрафом от 50 000 сум до увольнения!</em>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">Правила поведения на локации</div>
+            <ul style="padding-left:18px; font-size:14px; color:var(--text-muted); display:flex; flex-direction:column; gap:8px;">
+              <li><strong>Активная стойка:</strong> Работаем только стоя, в открытой позе, встречая людей улыбкой. Запрещено сидеть, облокачиваться на стойку, стены или столбы ТЦ.</li>
+              <li><strong>Использование телефона:</strong> Телефон разрешен ТОЛЬКО для фиксации данных клиента и связи с Тим-лидом. Соцсети, игры и видео на точке запрещены.</li>
+              <li><strong>Работа без кучкования:</strong> Запрещено собираться по 2–3 человека и болтать. Промоутеры распределяются по локации для максимального охвата.</li>
+              <li><strong>Вредные привычки:</strong> Запрещено жевать жвачку при клиентах, принимать пищу на стойке или курить/вейпить в зоне видимости посетителей.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Дресс-код (Внешний вид)</div>
+            <ul style="padding-left:18px; font-size:14px; color:var(--text-muted); display:flex; flex-direction:column; gap:8px;">
+              <li><strong>Фирменная манишка:</strong> Чистая манишка 35 Health Club носится на протяжении всей смены поверх футболки/кофты.</li>
+              <li><strong>Низ:</strong> Брюки или классические джинсы прямого кроя темных тонов (черные, темно-синие) без дыр и потертостей.</li>
+              <li><strong>Обувь:</strong> Чистая закрытая обувь (кеды, кроссовки).</li>
+              <li><strong style="color:var(--danger);">Категорически запрещено:</strong> выходить на смену в шортах, юбках выше колена или шлепанцах. Штраф: 50 000 сум + отправка домой переодеваться.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           ВКЛАДКА 6: КАРТА ПРЯМЫХ ССЫЛОК
+           ==================================================================== -->
+      <section id="tab-links" class="tab-content">
+        <div class="page-header">
+          <h1 class="page-title">🔗 Карта прямых ссылок промо-отдела</h1>
+          <p class="page-description">Сохраните эти закладки в браузере мобильного телефона для мгновенного доступа к каждому разделу.</p>
+        </div>
+
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Действие промоутера</th>
+                <th>Прямой URL-адрес</th>
+                <th>Назначение</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Рабочий стол</strong></td>
+                <td><a href="https://appuz.35minut.club/promo-desk" target="_blank" class="url-chip">/promo-desk</a></td>
+                <td>Главный экран: плиточная навигация по всем функциям</td>
+              </tr>
+              <tr>
+                <td><strong>Открыть / Закрыть смену</strong></td>
+                <td><a href="https://appuz.35minut.club/promo-desk/shift/create" target="_blank" class="url-chip">/promo-desk/shift/create</a></td>
+                <td>GPS-фиксация, селфи в манишке, план/факт, автоотчет в Telegram</td>
+              </tr>
+              <tr>
+                <td><strong>Ввести лид</strong></td>
+                <td><a href="https://appuz.35minut.club/promo-desk/lead/create" target="_blank" class="url-chip">/promo-desk/lead/create</a></td>
+                <td>Внесение теплого контакта в воронку Promo Ref amoCRM</td>
+              </tr>
+              <tr>
+                <td><strong>Ввести запись</strong></td>
+                <td><a href="https://appuz.35minut.club/promo-desk/booking/create" target="_blank" class="url-chip">/promo-desk/booking/create</a></td>
+                <td>Запись на тренировку на конкретное число и время</td>
+              </tr>
+              <tr>
+                <td><strong>Ввести визит</strong></td>
+                <td><a href="https://appuz.35minut.club/promo-desk/visit/create" target="_blank" class="url-chip">/promo-desk/visit/create</a></td>
+                <td>Фиксация прихода клиента с фото замеров Tanita и Листа</td>
+              </tr>
+              <tr>
+                <td><strong>Мои клиенты</strong></td>
+                <td><a href="https://appuz.35minut.club/promo-desk/clients/view" target="_blank" class="url-chip">/promo-desk/clients/view</a></td>
+                <td>Список всех ваших лидов и записей с полными номерами телефонов</td>
+              </tr>
+              <tr>
+                <td><strong>Мои смены и часы</strong></td>
+                <td><a href="https://appuz.35minut.club/promo-desk/shifts/view" target="_blank" class="url-chip">/promo-desk/shifts/view</a></td>
+                <td>История ваших смен, отработанные часы и сверка План / Факт</td>
+              </tr>
+              <tr>
+                <td><strong>Перерыв / Обед</strong></td>
+                <td><a href="https://appuz.35minut.club/promo-desk/break/create" target="_blank" class="url-chip">/promo-desk/break/create</a></td>
+                <td>Таймеры обеда (30 мин) и 3 коротких перерывов (по 5 мин)</td>
+              </tr>
+              <tr>
+                <td><strong>Мои нарушения</strong></td>
+                <td><a href="https://appuz.35minut.club/promo-desk/violations/view" target="_blank" class="url-chip">/promo-desk/violations/view</a></td>
+                <td>Личный реестр дисциплинарных предупреждений и штрафов</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           ВКЛАДКА 7: ШТРАФНАЯ СЕТКА (ОБНОВЛЕННАЯ)
+           ==================================================================== -->
+      <section id="tab-fines" class="tab-content">
+        <div class="page-header">
+          <h1 class="page-title">⛔ Официальная штрафная сетка</h1>
+          <p class="page-description">Система штрафов вводится для поддержания строгой командной дисциплины. Все штрафы удерживаются из зарплаты.</p>
+        </div>
+
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="width: 5%;">№</th>
+                <th style="width: 48%;">Характер дисциплинарного нарушения</th>
+                <th style="width: 25%;">Сумма штрафа (UZS)</th>
+                <th style="width: 22%;">Последствия</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><strong>Опоздание на смену</strong> без предварительного предупреждения</td>
+                <td><span class="badge badge-danger">50 000 сум</span></td>
+                <td>Предупреждать заранее за 24 ч</td>
+              </tr>
+              <tr style="background:#FEF2F2;">
+                <td>2</td>
+                <td><strong>Невыход на смену</strong> без предупреждения за 24 часа</td>
+                <td><span class="badge badge-danger" style="font-weight:900;">200 000 сум</span></td>
+                <td>Срыв работы локации</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><strong>Отсутствие открытия смены в аппликации</strong></td>
+                <td><span class="badge badge-danger">50 000 сум</span></td>
+                <td>Смена не засчитывается</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><strong>Отсутствие геолокации (GPS)</strong> при открытии смены</td>
+                <td><span class="badge badge-danger">40 000 сум</span></td>
+                <td>Подтверждает нахождение на объекте</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><strong>Отсутствие манишки / фирменной одежды на фото</strong> открытия смены</td>
+                <td><span class="badge badge-danger">50 000 сум</span></td>
+                <td>Манишка обязательна</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td><strong>Самовольный уход с точки / досрочное закрытие</strong> (&lt; 5 часов)</td>
+                <td><span class="badge badge-danger">от 50 000 сум</span></td>
+                <td>В размере дневной ставки</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td><strong>Самовольная смена филиала работы</strong> без согласования</td>
+                <td><span class="badge badge-danger">50 000 сум</span></td>
+                <td>Промоутер привязан к точке</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td><strong>Бездействие, сидение на точке, залипание в телефоне</strong></td>
+                <td><span class="badge badge-danger">50 000 сум</span></td>
+                <td>Контроль по камерам/лидам</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td><strong>Нарушение дресс-кода</strong> (юбка выше колена, шорты, неопрятный вид)</td>
+                <td><span class="badge badge-danger">50 000 сум</span></td>
+                <td>+ Отстранение для переодевания</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td><strong>Грубость / неуважительное поведение</strong> с коллегами или клиентами</td>
+                <td><span class="badge badge-danger">50 000 сум</span></td>
+                <td>Стандарты этики</td>
+              </tr>
+              <tr style="background:#FFF1F2;">
+                <td>11</td>
+                <td><strong>Фрод (Махинации):</strong> фейковые номера, знакомые ради плана, лица &lt; 21 года</td>
+                <td><span class="badge badge-danger" style="font-weight:900;">От 50 000 сум до УВОЛЬНЕНИЯ</span></td>
+                <td>Черный список компании</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           ВКЛАДКА 8: KPI И КОМПЕНСАЦИЯ
+           ==================================================================== -->
+      <section id="tab-kpi" class="tab-content">
+        <div class="page-header">
+          <h1 class="page-title">📊 KPI, система оплаты и компенсация плана</h1>
+          <p class="page-description">Условия расчета вознаграждения промо-консультанта и порядок отработки плана.</p>
+        </div>
+
+        <div class="grid-3" style="margin-bottom:20px;">
+          <div class="card" style="border-top:4px solid var(--secondary); text-align:center;">
+            <div style="font-size:12px; font-weight:700; color:var(--text-light); text-transform:uppercase;">Часовая ставка</div>
+            <div style="font-size:24px; font-weight:900; color:var(--text-dark); margin:6px 0;">12 000 сум</div>
+            <div style="font-size:13px; color:var(--text-muted);">За каждый отработанный час</div>
+          </div>
+
+          <div class="card" style="border-top:4px solid var(--success); text-align:center;">
+            <div style="font-size:12px; font-weight:700; color:var(--text-light); text-transform:uppercase;">Минимум за смену</div>
+            <div style="font-size:24px; font-weight:900; color:var(--success); margin:6px 0;">2 визита</div>
+            <div style="font-size:13px; color:var(--text-muted);">Норматив на 5 часов работы</div>
+          </div>
+
+          <div class="card" style="border-top:4px solid var(--warning); text-align:center;">
+            <div style="font-size:12px; font-weight:700; color:var(--text-light); text-transform:uppercase;">Длина смены</div>
+            <div style="font-size:24px; font-weight:900; color:var(--warning); margin:6px 0;">5 часов</div>
+            <div style="font-size:13px; color:var(--text-muted);">Утро (08-13) / Вечер (16-21)</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Правило 2-дневной компенсации плана</div>
+          <p style="font-size:14px; color:var(--text-muted); line-height:1.6;">
+            Если по объективным причинам за смену сделано менее 2 визитов (0 или 1 визит), промо-консультант обязан компенсировать отставание в течение следующих 2 рабочих дней. Например, при нулевом результате сегодня, на следующий день промоутер обязан сделать <strong>минимум 4 успешных визита</strong>.
+          </p>
+          <div style="margin-top:12px; padding:12px; background:#FEF2F2; border:1px solid #FECACA; border-radius:8px; font-size:13.5px; color:#991B1B;">
+            ⚠️ <strong>Критерий неэффективности:</strong> Систематический результат менее 2-х визитов за смену на протяжении недели классифицирует работу как неэффективную. Тим-лид имеет право пересмотреть оплату или отстранить сотрудника от работы.
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           ВКЛАДКА 9: СТАЖИРОВКА (7 ДНЕЙ)
+           ==================================================================== -->
+      <section id="tab-trainee" class="tab-content">
+        <div class="page-header">
+          <h1 class="page-title">🎓 Регламент стажировки (7 дней)</h1>
+          <p class="page-description">Порядок адаптации нового сотрудника промо-отдела сети клубов 35 Health Club.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">1. Наставничество и оплата</div>
+            <ul style="padding-left:18px; font-size:14px; color:var(--text-muted); display:flex; flex-direction:column; gap:8px;">
+              <li><strong>Длительность:</strong> Стажировка длится <strong>7 календарных дней</strong>.</li>
+              <li><strong>Первые 3 дня:</strong> стажер выходит на точку исключительно в паре с опытным промоутером-наставником.</li>
+              <li><strong>Оплата:</strong> Стажировка <strong>оплачивается в полном объеме</strong> по стандартной часовой ставке (12 000 сум/час).</li>
+              <li><strong>Учет лидов:</strong> Стажер может заводить контакты по ссылке наставника, но обязан вести отдельный дублирующий учет в своем блокноте.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="border-top:4px solid var(--primary);">
+            <div class="card-title">2. Обязательная тренировка на себе</div>
+            <p style="font-size:14px; color:var(--text-muted); line-height:1.6;">
+              Каждый стажер в течение первых 3 дней <strong>обязан лично пройти диагностику на анализаторе Tanita и круговую тренировку Milon на своем филиале</strong>.
+              <br><br>
+              Промоутер должен почувствовать нагрузку тренажеров Milon на собственном теле, чтобы искренне и экспертно отвечать на любые вопросы клиентов.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           ВКЛАДКА 10: ИНТЕРАКТИВНЫЙ ЧЕК-ЛИСТ
+           ==================================================================== -->
+      <section id="tab-checklist" class="tab-content">
+        <div class="page-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+          <div>
+            <h1 class="page-title">✅ Чек-лист самопроверки промоутера</h1>
+            <p class="page-description">Отмечайте пункты перед началом смены и перед уходом. Состояние сохраняется автоматически.</p>
+          </div>
+          <button onclick="resetChecklist()" class="btn btn-outline" style="font-size:12px; padding:6px 12px; background:#FFF; border:1px solid #CBD5E1;">Сбросить отметки</button>
+        </div>
+
+        <div id="checklist-container">
+          <div class="checklist-item" onclick="toggleChecklistItem(this)">
+            <input type="checkbox">
+            <span class="checklist-text">Прибыл на филиал за 10–15 минут до начала (в чистой фирменной манишке, опрятный вид).</span>
+          </div>
+
+          <div class="checklist-item" onclick="toggleChecklistItem(this)">
+            <input type="checkbox">
+            <span class="checklist-text">Открыл <strong>/promo-desk/shift/create</strong> и разрешил доступ браузера к GPS-геолокации.</span>
+          </div>
+
+          <div class="checklist-item" onclick="toggleChecklistItem(this)">
+            <input type="checkbox">
+            <span class="checklist-text">Сделал селфи внутри зала филиала в фирменной манишке с видимым логотипом «35».</span>
+          </div>
+
+          <div class="checklist-item" onclick="toggleChecklistItem(this)">
+            <input type="checkbox">
+            <span class="checklist-text">Ввел план (визиты не менее 2), нажал «🚀 Открыть смену» и проверил отправку в Telegram.</span>
+          </div>
+
+          <div class="checklist-item" onclick="toggleChecklistItem(this)">
+            <input type="checkbox">
+            <span class="checklist-text">Проверяю возраст каждого клиента (<strong>СТРОГО 21+</strong>, младше 21 года не заводить).</span>
+          </div>
+
+          <div class="checklist-item" onclick="toggleChecklistItem(this)">
+            <input type="checkbox">
+            <span class="checklist-text">Обед использовал (30 мин) через <strong>/break/create</strong>.</span>
+          </div>
+
+          <div class="checklist-item" onclick="toggleChecklistItem(this)">
+            <input type="checkbox">
+            <span class="checklist-text">Отработал не менее 5 часов, внес фактические итоги в <strong>/shift/create</strong> и нажал «🏁 Закрыть смену».</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    /* ==========================================================================
+       СКРИПТЫ: ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК, МОБИЛЬНОЕ МЕНЮ, FAQ, ЧЕК-ЛИСТ, GOOGLE DOCS
+       ========================================================================== */
+    function switchTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(t => t.classList.remove('active'));
+
+      const target = document.getElementById(tabId);
+      if (target) target.classList.add('active');
+
+      const navItems = document.querySelectorAll('.sidebar .nav-item');
+      navItems.forEach(item => {
+        if (item.getAttribute('onclick') && item.getAttribute('onclick').includes(tabId)) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+
+      const sidebar = document.getElementById('appSidebar');
+      if (sidebar) sidebar.classList.remove('mobile-open');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleMobileMenu() {
+      const sidebar = document.getElementById('appSidebar');
+      if (sidebar) sidebar.classList.toggle('mobile-open');
+    }
+
+    /* --------------------------------------------------------------------------
+       ИНТЕРАКТИВНЫЙ ЧЕК-ЛИСТ С LOCALSTORAGE
+       -------------------------------------------------------------------------- */
+    function toggleChecklistItem(itemEl) {
+      const checkbox = itemEl.querySelector('input[type="checkbox"]');
+      if (event.target !== checkbox) {
+        checkbox.checked = !checkbox.checked;
+      }
+      if (checkbox.checked) {
+        itemEl.classList.add('done');
+      } else {
+        itemEl.classList.remove('done');
+      }
+      saveChecklist();
+    }
+
+    function saveChecklist() {
+      const checkboxes = document.querySelectorAll('#checklist-container input[type="checkbox"]');
+      const state = Array.from(checkboxes).map(cb => cb.checked);
+      try {
+        localStorage.setItem('35hc_promo_checklist_v3', JSON.stringify(state));
+      } catch (e) {}
+    }
+
+    function loadChecklist() {
+      try {
+        const saved = localStorage.getItem('35hc_promo_checklist_v3');
+        if (!saved) return;
+        const state = JSON.parse(saved);
+        const items = document.querySelectorAll('#checklist-container .checklist-item');
+        items.forEach((item, idx) => {
+          const cb = item.querySelector('input[type="checkbox"]');
+          if (state[idx]) {
+            cb.checked = true;
+            item.classList.add('done');
+          }
+        });
+      } catch (e) {}
+    }
+
+    function resetChecklist() {
+      if (!confirm('Сбросить все отметки чек-листа?')) return;
+      const items = document.querySelectorAll('#checklist-container .checklist-item');
+      items.forEach(item => {
+        item.classList.remove('done');
+        item.querySelector('input[type="checkbox"]').checked = false;
+      });
+      try {
+        localStorage.removeItem('35hc_promo_checklist_v3');
+      } catch (e) {}
+    }
+
+    /* --------------------------------------------------------------------------
+       КОПИРОВАНИЕ ДЛЯ GOOGLE DOCS
+       -------------------------------------------------------------------------- */
+    function copyForGoogleDocs() {
+      const btn = document.getElementById('copyDocBtn');
+      const content = document.getElementById('mainDocArea');
+
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(t => t.style.display = 'block');
+
+      const range = document.createRange();
+      range.selectNode(content);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+
+      try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+          const origText = btn.innerHTML;
+          btn.innerHTML = '✅ <span>Скопировано!</span>';
+          setTimeout(() => {
+            btn.innerHTML = origText;
+          }, 3000);
+        }
+      } catch (err) {
+        alert('Пожалуйста, выделите текст страницы (Cmd+A / Ctrl+A) и скопируйте (Cmd+C / Ctrl+C).');
+      }
+
+      window.getSelection().removeAllRanges();
+      tabs.forEach(t => t.style.display = '');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadChecklist();
+    });
+  </script>
+</body>
+</html>
