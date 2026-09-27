@@ -386,6 +386,12 @@
       gap: 18px;
     }
 
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
     .alert-banner {
       border-radius: var(--radius-md);
       padding: 16px 20px;
@@ -753,6 +759,272 @@
       color: var(--text-dark);
     }
 
+    /* --------------------------------------------------------------------------
+       ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР МОТИВАЦИИ
+       -------------------------------------------------------------------------- */
+    .calc-container {
+      background: linear-gradient(145deg, #FFFFFF 0%, #FFF8F5 100%);
+      border: 2px solid var(--primary-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 28px;
+    }
+
+    .calc-input-group {
+      margin-bottom: 18px;
+    }
+
+    .calc-label {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .calc-range {
+      width: 100%;
+      accent-color: var(--primary);
+      cursor: pointer;
+      height: 6px;
+    }
+
+    .calc-number-input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 15px;
+      font-weight: 600;
+      background: #FFFFFF;
+      color: var(--text-dark);
+    }
+    .calc-number-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.15);
+    }
+
+    .calc-result-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .calc-stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--border-color);
+      font-size: 14px;
+    }
+
+    .calc-stat-row:last-child {
+      border-bottom: none;
+    }
+
+    .total-salary-box {
+      background: linear-gradient(135deg, #FF5722 0%, #E64A19 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: center;
+      margin-top: 14px;
+      box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
+    }
+
+    .total-salary-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.9;
+    }
+
+    .total-salary-val {
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin: 4px 0;
+    }
+
+    /* --------------------------------------------------------------------------
+       ФИЛИАЛЫ И ИНТЕРАКТИВНЫЙ ПОИСК
+       -------------------------------------------------------------------------- */
+    .branch-controls {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .search-input-box {
+      flex: 1;
+      min-width: 260px;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 10px 14px 10px 38px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 14.5px;
+      background: #FFFFFF;
+      color: var(--text-dark);
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+      pointer-events: none;
+      font-size: 15px;
+    }
+
+    .filter-pills {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      flex-wrap: wrap;
+    }
+
+    .filter-pill {
+      padding: 8px 14px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text-muted);
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+    .filter-pill:hover {
+      background: var(--bg-muted);
+      color: var(--text-dark);
+    }
+    .filter-pill.active {
+      background: var(--secondary);
+      color: #FFFFFF;
+      border-color: var(--secondary);
+    }
+
+    .branches-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+    }
+
+    .branch-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      position: relative;
+      border-top: 4px solid var(--secondary);
+    }
+
+    .branch-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .branch-num {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-light);
+      background: var(--bg-muted);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+    }
+
+    .branch-name {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .branch-district {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--secondary);
+      background: var(--secondary-light);
+      padding: 2px 8px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+    }
+
+    .branch-info-row {
+      font-size: 13.5px;
+      margin-bottom: 8px;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .branch-info-row strong {
+      color: var(--text-dark);
+      min-width: 90px;
+      flex-shrink: 0;
+    }
+
+    .branch-copy-btn {
+      margin-top: 14px;
+      width: 100%;
+      padding: 8px 12px;
+      background: var(--bg-muted);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+    .branch-copy-btn:hover {
+      background: #E2E8F0;
+      border-color: #CBD5E1;
+    }
+
     /* Мобильная адаптивность */
     @media (max-width: 992px) {
       .header-quick-stats { display: none; }
@@ -768,7 +1040,10 @@
       aside.sidebar.mobile-open { display: flex; }
       .mobile-menu-btn { display: block; }
       main.content-area { padding: 20px 16px; }
-      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .calc-grid { grid-template-columns: 1fr; }
+      .branch-controls { flex-direction: column; }
+      .search-input-box { width: 100%; }
     }
   </style>
 </head>
@@ -827,16 +1102,21 @@
         <span class="nav-badge">CRM</span>
       </div>
 
-      <div class="nav-group-title">Дисциплина и мотивация</div>
+      <div class="nav-group-title">Мотивация и условия</div>
+      <div class="nav-item" onclick="switchTab('tab-kpi')">
+        <span class="nav-icon">📊</span>
+        <span>KPI и условия</span>
+        <span class="nav-badge">Бонусы</span>
+      </div>
+      <div class="nav-item" onclick="switchTab('tab-calc')">
+        <span class="nav-icon">🧮</span>
+        <span>Калькулятор дохода</span>
+        <span class="nav-badge" style="background:#FFF0EB; color:#FF5722;">Live</span>
+      </div>
       <div class="nav-item" onclick="switchTab('tab-fines')">
         <span class="nav-icon">⛔</span>
         <span>Штрафная сетка</span>
         <span class="nav-badge" style="color:var(--danger); font-weight:800;">Штрафы</span>
-      </div>
-      <div class="nav-item" onclick="switchTab('tab-kpi')">
-        <span class="nav-icon">📊</span>
-        <span>KPI и компенсация плана</span>
-        <span class="nav-badge">Норматив</span>
       </div>
       <div class="nav-item" onclick="switchTab('tab-trainee')">
         <span class="nav-icon">🎓</span>
@@ -844,7 +1124,12 @@
         <span class="nav-badge">Обучение</span>
       </div>
 
-      <div class="nav-group-title">Инструменты</div>
+      <div class="nav-group-title">Локации и инструменты</div>
+      <div class="nav-item" onclick="switchTab('tab-branches')">
+        <span class="nav-icon">📍</span>
+        <span>17 филиалов сети</span>
+        <span class="nav-badge" style="background:#E0F2FE; color:#0284C7; font-weight:800;">17</span>
+      </div>
       <div class="nav-item" onclick="switchTab('tab-checklist')">
         <span class="nav-icon">✅</span>
         <span>Интерактивный чек-лист</span>
@@ -1409,41 +1694,294 @@
       </section>
 
       <!-- ====================================================================
-           ВКЛАДКА 8: KPI И КОМПЕНСАЦИЯ
+           ВКЛАДКА: KPI И УСЛОВИЯ
            ==================================================================== -->
       <section id="tab-kpi" class="tab-content">
         <div class="page-header">
-          <h1 class="page-title">📊 KPI, система оплаты и компенсация плана</h1>
-          <p class="page-description">Условия расчета вознаграждения промо-консультанта и порядок отработки плана.</p>
+          <h1 class="page-title">📊 Система оплаты труда и KPI</h1>
+          <p class="page-description">Прозрачная модель мотивации: фиксированный доход + выплата за каждый визит + процент от продаж клуба.</p>
         </div>
 
-        <div class="grid-3" style="margin-bottom:20px;">
-          <div class="card" style="border-top:4px solid var(--secondary); text-align:center;">
-            <div style="font-size:12px; font-weight:700; color:var(--text-light); text-transform:uppercase;">Часовая ставка</div>
-            <div style="font-size:24px; font-weight:900; color:var(--text-dark); margin:6px 0;">12 000 сум</div>
-            <div style="font-size:13px; color:var(--text-muted);">За каждый отработанный час</div>
+        <div class="grid-4" style="margin-bottom:20px;">
+          <div class="card" style="margin-bottom:0; text-align:center; border-top:4px solid var(--primary);">
+            <div style="font-size:12px; font-weight:700; color:var(--text-light); text-transform:uppercase;">Фиксированный оклад</div>
+            <div style="font-size:24px; font-weight:900; color:var(--text-dark); margin:6px 0;">1 200 000 сум</div>
+            <div style="font-size:12px; color:var(--text-muted);">110 часов, график 6/1 (12 000 сум/час)</div>
           </div>
 
-          <div class="card" style="border-top:4px solid var(--success); text-align:center;">
-            <div style="font-size:12px; font-weight:700; color:var(--text-light); text-transform:uppercase;">Минимум за смену</div>
-            <div style="font-size:24px; font-weight:900; color:var(--success); margin:6px 0;">2 визита</div>
-            <div style="font-size:13px; color:var(--text-muted);">Норматив на 5 часов работы</div>
+          <div class="card" style="margin-bottom:0; text-align:center; border-top:4px solid var(--secondary);">
+            <div style="font-size:12px; font-weight:700; color:var(--text-light); text-transform:uppercase;">Бесплатный визит</div>
+            <div style="font-size:24px; font-weight:900; color:var(--secondary); margin:6px 0;">50 000 сум</div>
+            <div style="font-size:12px; color:var(--text-muted);">За каждого приведенного на Tanita</div>
           </div>
 
-          <div class="card" style="border-top:4px solid var(--warning); text-align:center;">
-            <div style="font-size:12px; font-weight:700; color:var(--text-light); text-transform:uppercase;">Длина смены</div>
-            <div style="font-size:24px; font-weight:900; color:var(--warning); margin:6px 0;">5 часов</div>
-            <div style="font-size:13px; color:var(--text-muted);">Утро (08-13) / Вечер (16-21)</div>
+          <div class="card" style="margin-bottom:0; text-align:center; border-top:4px solid var(--success);">
+            <div style="font-size:12px; font-weight:700; color:var(--text-light); text-transform:uppercase;">Платный визит (120k)</div>
+            <div style="font-size:24px; font-weight:900; color:var(--success); margin:6px 0;">60 000 сум</div>
+            <div style="font-size:12px; color:var(--text-muted);">50% от стоимости тренировки</div>
+          </div>
+
+          <div class="card" style="margin-bottom:0; text-align:center; border-top:4px solid var(--warning);">
+            <div style="font-size:12px; font-weight:700; color:var(--text-light); text-transform:uppercase;">Бонус от оборота</div>
+            <div style="font-size:24px; font-weight:900; color:var(--warning); margin:6px 0;">от 3% до 7%</div>
+            <div style="font-size:12px; color:var(--text-muted);">От купленных абонементов</div>
           </div>
         </div>
 
+        <!-- Шкала бонусов от личного оборота продаж -->
         <div class="card">
-          <div class="card-title">Правило 2-дневной компенсации плана</div>
+          <div class="card-title">Шкала бонусов от личного оборота продаж</div>
+          <p style="font-size:14px; color:var(--text-muted); margin-bottom:12px;">
+            Когда приведенный тобой клиент покупает персональные тренировки или абонемент в клубе, ты получаешь прямой процент от всей суммы оплаты:
+          </p>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Параметр</th>
+                  <th>Процент бонуса</th>
+                  <th>Условие начисления</th>
+                  <th>Пример на 50 визитов</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Бонус 1 ступени</strong></td>
+                  <td><span class="badge badge-primary">3%</span></td>
+                  <td>Конверсия визитов в покупку выше <strong>20%</strong></td>
+                  <td>~8 продаж (оборот 52 млн) ➔ <strong>+1 560 000 сум</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Бонус 2 ступени</strong></td>
+                  <td><span class="badge badge-primary">4%</span></td>
+                  <td>Конверсия визитов в покупку выше <strong>30%</strong></td>
+                  <td>~15 продаж (оборот 97.5 млн) ➔ <strong>+3 900 000 сум</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>Бонус 3 ступени</strong></td>
+                  <td><span class="badge badge-success">5%</span></td>
+                  <td>Конверсия визитов в покупку выше <strong>40%</strong></td>
+                  <td>~20 продаж (оборот 130 млн) ➔ <strong>+6 500 000 сум</strong></td>
+                </tr>
+                <tr style="background:#ECFDF5;">
+                  <td><strong>Бонус ТОП-уровня</strong></td>
+                  <td><span class="badge badge-success" style="font-size:13px; font-weight:800;">7%</span></td>
+                  <td>Конверсия визитов в покупку выше <strong>50%</strong></td>
+                  <td>~25 продаж (оборот 162.5 млн) ➔ <strong>+11 375 000 сум</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Симуляция заработка -->
+        <div class="card">
+          <div class="card-title">Симуляция заработка (при среднем чеке абонемента 6 500 000 сум)</div>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr style="background:#0F172A; color:#FFFFFF;">
+                  <th style="color:#FFF;">Визиты</th>
+                  <th style="color:#FFF;">Конверсия</th>
+                  <th style="color:#FFF;">Кол-во продаж</th>
+                  <th style="color:#FFF;">Оборот клуба</th>
+                  <th style="color:#FFF;">% Бонуса</th>
+                  <th style="color:#FFF;">Сумма бонуса</th>
+                  <th style="color:#FFF;">Сумма визитов</th>
+                  <th style="color:#34D399; font-weight:800;">ИТОГОВАЯ ЗП</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>50</strong></td>
+                  <td>20%</td>
+                  <td>8</td>
+                  <td>52 000 000 сум</td>
+                  <td>3%</td>
+                  <td>1 560 000 сум</td>
+                  <td>2 500 000 сум</td>
+                  <td><strong style="color:var(--text-dark); font-size:16px;">5 260 000 сум</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>50</strong></td>
+                  <td>30%</td>
+                  <td>15</td>
+                  <td>97 500 000 сум</td>
+                  <td>4%</td>
+                  <td>3 900 000 сум</td>
+                  <td>2 500 000 сум</td>
+                  <td><strong style="color:var(--text-dark); font-size:16px;">7 600 000 сум</strong></td>
+                </tr>
+                <tr>
+                  <td><strong>50</strong></td>
+                  <td>40%</td>
+                  <td>20</td>
+                  <td>130 000 000 сум</td>
+                  <td>5%</td>
+                  <td>6 500 000 сум</td>
+                  <td>2 500 000 сум</td>
+                  <td><strong style="color:var(--primary); font-size:17px;">10 200 000 сум</strong></td>
+                </tr>
+                <tr style="background:#F0FDF4;">
+                  <td><strong>50</strong></td>
+                  <td><strong>50%</strong></td>
+                  <td>25</td>
+                  <td>162 500 000 сум</td>
+                  <td><strong>7%</strong></td>
+                  <td><strong>11 375 000 сум</strong></td>
+                  <td>2 500 000 сум</td>
+                  <td><strong style="color:#059669; font-size:19px;">15 075 000 сум</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="font-size:12.5px; color:var(--text-light); margin-top:8px;">
+            * Итоговая зарплата включает фиксированный оклад 1 200 000 сум за 110 часов работы.
+          </div>
+        </div>
+
+        <!-- Правило 2-дневной компенсации плана -->
+        <div class="card">
+          <div class="card-title">Норматив смены и правило 2-дневной компенсации плана</div>
+          <div class="grid-2" style="margin-bottom:12px;">
+            <div style="padding:14px; background:var(--bg-muted); border-radius:8px;">
+              <div style="font-weight:700; color:var(--text-dark);">Минимум за 1 смену:</div>
+              <div style="font-size:18px; font-weight:800; color:var(--success); margin:4px 0;">2 визита</div>
+              <div style="font-size:13px; color:var(--text-muted);">Норматив выработки на 5 часов работы промо-консультанта.</div>
+            </div>
+            <div style="padding:14px; background:var(--bg-muted); border-radius:8px;">
+              <div style="font-weight:700; color:var(--text-dark);">Длина смены:</div>
+              <div style="font-size:18px; font-weight:800; color:var(--primary); margin:4px 0;">5 часов</div>
+              <div style="font-size:13px; color:var(--text-muted);">Утро: 08:00 – 13:00 / Вечер: 16:00 – 21:00</div>
+            </div>
+          </div>
           <p style="font-size:14px; color:var(--text-muted); line-height:1.6;">
             Если по объективным причинам за смену сделано менее 2 визитов (0 или 1 визит), промо-консультант обязан компенсировать отставание в течение следующих 2 рабочих дней. Например, при нулевом результате сегодня, на следующий день промоутер обязан сделать <strong>минимум 4 успешных визита</strong>.
           </p>
           <div style="margin-top:12px; padding:12px; background:#FEF2F2; border:1px solid #FECACA; border-radius:8px; font-size:13.5px; color:#991B1B;">
             ⚠️ <strong>Критерий неэффективности:</strong> Систематический результат менее 2-х визитов за смену на протяжении недели классифицирует работу как неэффективную. Тим-лид имеет право пересмотреть оплату или отстранить сотрудника от работы.
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           ВКЛАДКА: ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР ДОХОДА
+           ==================================================================== -->
+      <section id="tab-calc" class="tab-content">
+        <div class="page-header">
+          <h1 class="page-title">🧮 Интерактивный калькулятор дохода</h1>
+          <p class="page-description">Управляй своими параметрами и смотри, сколько ты заработаешь в этом месяце в реальном времени!</p>
+        </div>
+
+        <div class="calc-container">
+          <div class="calc-grid">
+            
+            <!-- Левая колонка: Входные параметры -->
+            <div>
+              <div class="card-title" style="margin-bottom:18px;">⚙️ Твои параметры работы</div>
+
+              <!-- Часы работы -->
+              <div class="calc-input-group">
+                <div class="calc-label">
+                  <span>Отработано часов в месяц:</span>
+                  <span id="label-hours" style="color:var(--primary); font-weight:800;">110 часов</span>
+                </div>
+                <input type="range" id="input-hours" class="calc-range" min="20" max="220" step="5" value="110" oninput="calculateSalary()" />
+                <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--text-light); margin-top:4px;">
+                  <span>20 ч (подработка)</span>
+                  <span>110 ч (стандарт 6/1)</span>
+                  <span>200+ ч (максимум)</span>
+                </div>
+              </div>
+
+              <!-- Бесплатные визиты -->
+              <div class="calc-input-group">
+                <div class="calc-label">
+                  <span>Бесплатных визитов (Tanita):</span>
+                  <span id="label-visits" style="color:var(--secondary); font-weight:800;">40 чел</span>
+                </div>
+                <input type="range" id="input-visits" class="calc-range" min="0" max="150" step="2" value="40" oninput="calculateSalary()" />
+                <div style="font-size:11.5px; color:var(--text-muted); margin-top:2px;">Выплата: 50 000 сум за каждый визит</div>
+              </div>
+
+              <!-- Платные визиты -->
+              <div class="calc-input-group">
+                <div class="calc-label">
+                  <span>Платных визитов (по 120 000 сум):</span>
+                  <span id="label-paid-visits" style="color:var(--success); font-weight:800;">10 чел</span>
+                </div>
+                <input type="range" id="input-paid-visits" class="calc-range" min="0" max="50" step="1" value="10" oninput="calculateSalary()" />
+                <div style="font-size:11.5px; color:var(--text-muted); margin-top:2px;">Выплата: 50% = 60 000 сум тебе в карман!</div>
+              </div>
+
+              <!-- Конверсия в продажи абонементов -->
+              <div class="calc-input-group">
+                <div class="calc-label">
+                  <span>Конверсия тренеров в продажи:</span>
+                  <span id="label-conv" style="color:var(--warning); font-weight:800;">30%</span>
+                </div>
+                <input type="range" id="input-conv" class="calc-range" min="0" max="70" step="5" value="30" oninput="calculateSalary()" />
+                <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--text-light); margin-top:4px;">
+                  <span>до 20% (0%)</span>
+                  <span>20%+ (3%)</span>
+                  <span>30%+ (4%)</span>
+                  <span>40%+ (5%)</span>
+                  <span>50%+ (7%)</span>
+                </div>
+              </div>
+
+              <div style="font-size:12px; color:var(--text-light); margin-top:12px;">
+                * Расчет оборота ведется по среднему чеку абонемента сети: <strong>6 500 000 сум</strong>.
+              </div>
+            </div>
+
+            <!-- Правая колонка: Итоговая разбивка -->
+            <div class="calc-result-box">
+              <div>
+                <div style="font-weight:800; font-size:16px; color:var(--text-dark); margin-bottom:12px; border-bottom:1px solid var(--border-color); padding-bottom:8px;">
+                  📑 Детализация выплат
+                </div>
+
+                <div class="calc-stat-row">
+                  <span>Оклад (<span id="stat-hours">110</span> ч × 12 000 сум):</span>
+                  <strong id="res-base">1 320 000 сум</strong>
+                </div>
+
+                <div class="calc-stat-row">
+                  <span>За бесплатные визиты (<span id="stat-free-count">40</span>):</span>
+                  <strong id="res-free">2 000 000 сум</strong>
+                </div>
+
+                <div class="calc-stat-row">
+                  <span>За платные визиты (<span id="stat-paid-count">10</span>):</span>
+                  <strong id="res-paid">600 000 сум</strong>
+                </div>
+
+                <div class="calc-stat-row">
+                  <span>Всего визитов в клуб:</span>
+                  <strong id="res-total-visits">50 человек</strong>
+                </div>
+
+                <div class="calc-stat-row">
+                  <span>Продаж тренерами (~<span id="res-sales-count">15</span> шт):</span>
+                  <span id="res-turnover" style="font-size:12.5px; color:var(--text-muted);">97 500 000 сум оборот</span>
+                </div>
+
+                <div class="calc-stat-row" style="background:#FFFBEB; padding:6px 8px; border-radius:6px;">
+                  <span>Бонусный процент (<span id="res-bonus-pct">4%</span>):</span>
+                  <strong id="res-bonus-sum" style="color:#B45309;">3 900 000 сум</strong>
+                </div>
+              </div>
+
+              <!-- Крупный результат -->
+              <div class="total-salary-box">
+                <div class="total-salary-label">ИТОГО К ВЫПЛАТЕ НА РУКИ</div>
+                <div class="total-salary-val" id="res-total-salary">7 820 000 сум</div>
+                <div style="font-size:11.5px; opacity:0.9;">Твой личный доход за месяц</div>
+              </div>
+
+            </div>
+
           </div>
         </div>
       </section>
@@ -1476,6 +2014,52 @@
               Промоутер должен почувствовать нагрузку тренажеров Milon на собственном теле, чтобы искренне и экспертно отвечать на любые вопросы клиентов.
             </p>
           </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           ВКЛАДКА: 17 ФИЛИАЛОВ СЕТИ И РАЙОНЫ
+           ==================================================================== -->
+      <section id="tab-branches" class="tab-content">
+        <div class="page-header">
+          <h1 class="page-title">📍 Филиалы сети 35' Health Club (17 локаций)</h1>
+          <p class="page-description">Полный справочник адресов, ориентиров, этажей и расписания по всем 17 филиалам Ташкента с мгновенным поиском.</p>
+        </div>
+
+        <div class="alert-banner info" style="margin-bottom:18px;">
+          <span class="alert-icon">ℹ️</span>
+          <div style="flex:1;">
+            <strong>Единый колл-центр сети:</strong> <span style="font-size:15px; font-weight:800; color:var(--text-dark);">+998 55 500 11 35</span> (для всех филиалов)
+            <div style="font-size:13px; color:var(--text-muted); margin-top:4px;">
+              Используйте быстрый поиск ниже или фильтры по районам для оперативной подсказки прохожим и клиентам.
+            </div>
+          </div>
+        </div>
+
+        <!-- Поиск и фильтры по районам -->
+        <div class="branch-controls">
+          <div class="search-input-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="branch-search" class="search-input" placeholder="Поиск по названию, улице, метро или ориентиру..." oninput="filterBranches()" />
+          </div>
+
+          <div class="filter-pills" id="district-filters">
+            <button class="filter-pill active" onclick="setDistrictFilter('all', this)">Все (17)</button>
+            <button class="filter-pill" onclick="setDistrictFilter('Яшнабад', this)">Яшнабад</button>
+            <button class="filter-pill" onclick="setDistrictFilter('Юнусабад', this)">Юнусабад</button>
+            <button class="filter-pill" onclick="setDistrictFilter('Мирзо-Улугбек', this)">Мирзо-Улугбек</button>
+            <button class="filter-pill" onclick="setDistrictFilter('Мирабад', this)">Мирабад</button>
+            <button class="filter-pill" onclick="setDistrictFilter('Яккасарай', this)">Яккасарай</button>
+            <button class="filter-pill" onclick="setDistrictFilter('Чиланзар', this)">Чиланзар / Учтепа</button>
+            <button class="filter-pill" onclick="setDistrictFilter('Алмазар', this)">Алмазар</button>
+            <button class="filter-pill" onclick="setDistrictFilter('Шайхантахур', this)">Шайхантахур</button>
+            <button class="filter-pill" onclick="setDistrictFilter('Сергели', this)">Сергели</button>
+          </div>
+        </div>
+
+        <!-- Сетка карточек 17 филиалов -->
+        <div class="branches-grid" id="branches-container">
+          <!-- Генерируется автоматически JavaScript -->
         </div>
       </section>
 
@@ -1616,6 +2200,397 @@
     }
 
     /* --------------------------------------------------------------------------
+       ИНТЕРАКТИВНЫЙ РАСЧЕТ ЗАРПЛАТЫ (КАЛЬКУЛЯТОР МОТИВАЦИИ)
+       -------------------------------------------------------------------------- */
+    function calculateSalary() {
+      const hours = parseInt(document.getElementById('input-hours').value) || 0;
+      const freeVisits = parseInt(document.getElementById('input-visits').value) || 0;
+      const paidVisits = parseInt(document.getElementById('input-paid-visits').value) || 0;
+      const conv = parseInt(document.getElementById('input-conv').value) || 0;
+
+      // Обновление подписей ползунков
+      document.getElementById('label-hours').textContent = hours + ' часов';
+      document.getElementById('label-visits').textContent = freeVisits + ' чел';
+      document.getElementById('label-paid-visits').textContent = paidVisits + ' чел';
+      document.getElementById('label-conv').textContent = conv + '%';
+
+      // 1. Оклад: 12 000 сум за каждый отработанный час
+      const baseSalary = hours * 12000;
+
+      // 2. Оплата за визиты:
+      // Бесплатный визит: 50 000 сум
+      // Платный визит: 50% от стоимости 120 000 сум = 60 000 сум
+      const freeSum = freeVisits * 50000;
+      const paidSum = paidVisits * 60000;
+      const totalVisitsCount = freeVisits + paidVisits;
+
+      // 3. Расчет продаж и бонуса от оборота:
+      // Средний чек абонемента: 6 500 000 сум
+      const avgCheck = 6500000;
+      const salesCount = Math.round(totalVisitsCount * (conv / 100));
+      const turnover = salesCount * avgCheck;
+
+      // Шкала бонусов со скриншота:
+      // >= 50% -> 7%, >= 40% -> 5%, >= 30% -> 4%, >= 20% -> 3%, иначе 0%
+      let bonusPct = 0;
+      if (conv >= 50) {
+        bonusPct = 7;
+      } else if (conv >= 40) {
+        bonusPct = 5;
+      } else if (conv >= 30) {
+        bonusPct = 4;
+      } else if (conv >= 20) {
+        bonusPct = 3;
+      } else {
+        bonusPct = 0;
+      }
+
+      const bonusSum = Math.round(turnover * (bonusPct / 100));
+      const totalSalary = baseSalary + freeSum + paidSum + bonusSum;
+
+      // Форматирование с разделителями тысяч
+      const formatNumber = (num) => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+      document.getElementById('stat-hours').textContent = hours;
+      document.getElementById('res-base').textContent = formatNumber(baseSalary) + ' сум';
+
+      document.getElementById('stat-free-count').textContent = freeVisits;
+      document.getElementById('res-free').textContent = formatNumber(freeSum) + ' сум';
+
+      document.getElementById('stat-paid-count').textContent = paidVisits;
+      document.getElementById('res-paid').textContent = formatNumber(paidSum) + ' сум';
+
+      document.getElementById('res-total-visits').textContent = totalVisitsCount + ' человек';
+      document.getElementById('res-sales-count').textContent = salesCount;
+      document.getElementById('res-turnover').textContent = formatNumber(turnover) + ' сум оборот';
+
+      document.getElementById('res-bonus-pct').textContent = bonusPct + '%';
+      document.getElementById('res-bonus-sum').textContent = formatNumber(bonusSum) + ' сум';
+
+      document.getElementById('res-total-salary').textContent = formatNumber(totalSalary) + ' сум';
+    }
+
+    /* --------------------------------------------------------------------------
+       БАЗА ДАННЫХ 17 ФИЛИАЛОВ СЕТИ 35' HEALTH CLUB В ТАШКЕНТЕ
+       -------------------------------------------------------------------------- */
+    let currentDistrict = 'all';
+
+    const branchesData = [
+      {
+        id: 1,
+        name: "Олтинтепа",
+        district: "Яшнабадский",
+        address: "Олтинтепа 26-28",
+        landmark: "Внутри автомойки wash in. Справа от ресторана retro и women's life. Крупные ориентиры: между Паркентским базаром и заводом шампанских вин.",
+        floor: "0-й этаж (цокольный)",
+        perks: "Беговые дорожки, есть ресепшн",
+        schedule: "пн–сб: 07:00 – 21:00",
+        womenHours: "пн–пт: 10:00 – 14:00"
+      },
+      {
+        id: 2,
+        name: "Бодомзар",
+        district: "Юнусабадский",
+        address: "ул. Богишамол, 90",
+        landmark: "Юнусабадский РОВД",
+        floor: "3-й этаж",
+        perks: "Беговые дорожки, на один тренажер больше",
+        schedule: "пн–сб: 07:00 – 21:00",
+        womenHours: "пн–пт: 10:00 – 14:00"
+      },
+      {
+        id: 3,
+        name: "Чиланзар",
+        district: "Чиланзарский",
+        address: "ул. Катартал, 8-16Б",
+        landmark: "Ресторан Chenson",
+        floor: "2-й этаж",
+        perks: "Беговые дорожки, на один тренажер больше",
+        schedule: "пн–сб: 07:00 – 21:00",
+        womenHours: "пн–пт: 10:00 – 14:00"
+      },
+      {
+        id: 4,
+        name: "Кушбеги",
+        district: "Яккасарайский",
+        address: "ул. Кушбеги, дом 12 (новостройка)",
+        landmark: "Текстильный комбинат, ресторан «Дунье», возле дороги. Напротив филиала — отель «Кушбеги».",
+        floor: "2-й этаж",
+        perks: "Беговая дорожка",
+        schedule: "пн–сб: 07:00 – 21:00",
+        womenHours: "пн–пт: 10:00 – 14:00"
+      },
+      {
+        id: 5,
+        name: "Караташ",
+        district: "Шайхантахурский",
+        address: "ул. Беш-Агач, 3г",
+        landmark: "Рынок Чорсу, магазин Техномарт, 200 метров в сторону 12-этажек",
+        floor: "2-й этаж",
+        perks: "Стандартный смарт-зал",
+        schedule: "пн–сб: 07:00 – 21:00",
+        womenHours: "пн–пт: 10:00 – 19:00"
+      },
+      {
+        id: 6,
+        name: "Карасарай",
+        district: "Алмазарский",
+        address: "ул. Малая Кольцевая, 77/1Ф",
+        landmark: "Туберкулезная больница",
+        floor: "3-й этаж",
+        perks: "На один тренажер больше",
+        schedule: "пн–сб: 07:00 – 21:00",
+        womenHours: "пн–пт: 10:00 – 19:00"
+      },
+      {
+        id: 7,
+        name: "Сергили",
+        district: "Сергели",
+        address: "Янги Сергили, 21А",
+        landmark: "Кафе Jizz Bizz, торговый центр",
+        floor: "3-й этаж",
+        perks: "Беговая дорожка",
+        schedule: "пн–сб: 07:00 – 21:00",
+        womenHours: "пн–пт: 10:00 – 14:00"
+      },
+      {
+        id: 8,
+        name: "Карасу",
+        district: "Мирзо-Улугбекский",
+        address: "массив Карасу-4, дом 2",
+        landmark: "Ресторан Millenium, за конечной автобусной остановкой, Monaco Aqua. Не доезжая аквапарка поворот налево 150 м, на углу дома 35HC",
+        floor: "1-й этаж",
+        perks: "Беговая дорожка, больше тренажеров",
+        schedule: "пн–сб: 07:00 – 21:00",
+        womenHours: "пн–пт: 10:00 – 14:00"
+      },
+      {
+        id: 9,
+        name: "Минор",
+        district: "Юнусабадский",
+        address: "Ц-5 массив Киёт, дом 50",
+        landmark: "Финансовый институт, метро Минор, с задней стороны 16-этажного здания, 9-этажный дом",
+        floor: "0-й этаж (цокольный)",
+        perks: "Беговая дорожка",
+        schedule: "пн–сб: 07:00 – 21:00",
+        womenHours: "Нету ⛔ (общие часы)"
+      },
+      {
+        id: 10,
+        name: "Гаспиталка",
+        district: "Мирабадский",
+        address: "ул. Нукусская, 83А",
+        landmark: "Ozone FC, Макро, со стороны Госпитального базара, проезжая Капиталбанк 100м с левой стороны",
+        floor: "0-й этаж (цокольный)",
+        perks: "Больше тренажеров",
+        schedule: "пн–сб: 07:00 – 22:00 (до 22:00!)",
+        womenHours: "Нету ⛔ (общие часы)"
+      },
+      {
+        id: 11,
+        name: "Лисунова",
+        district: "Яшнабадский",
+        address: "массив Карасув, 35",
+        landmark: "Бывший кинотеатр Лисунова, здание Sky Builds, вход под DODO PIZZA",
+        floor: "0-й этаж (цокольный)",
+        perks: "Беговая дорожка",
+        schedule: "пн–сб: 07:00 – 21:00",
+        womenHours: "пн–пт: 10:00 – 14:00"
+      },
+      {
+        id: 12,
+        name: "Юнусобад",
+        district: "Юнусабадский",
+        address: "Юнусабад 14-й квартал, дом 67",
+        landmark: "Ресторан Samara, магазин Anor",
+        floor: "0-й этаж (цокольный)",
+        perks: "Беговая дорожка",
+        schedule: "пн–сб: 07:00 – 21:00",
+        womenHours: "пн–пт: 10:00 – 14:00"
+      },
+      {
+        id: 13,
+        name: "Чимган",
+        district: "Мирзо-Улугбекский",
+        address: "Буз-2, 6/9 ж/м (Бинокор 69)",
+        landmark: "Недалеко от ЭКО-базара (Чимган), рядом школа №49",
+        floor: "1-й этаж",
+        perks: "Стандартный смарт-зал",
+        schedule: "пн–сб: 07:00 – 21:00",
+        womenHours: "пн–пт: 10:00 – 14:00"
+      },
+      {
+        id: 14,
+        name: "Айвон",
+        district: "Юнусабадский",
+        address: "Юнусабад 2-й квартал, ЖК «Айвон»",
+        landmark: "Недалеко Ташкентская Магистральная электросеть, рядом магазин «Барака»",
+        floor: "1-й этаж",
+        perks: "Стандартный смарт-зал",
+        schedule: "пн–сб: 07:00 – 21:00",
+        womenHours: "Нету ⛔ (общие часы)"
+      },
+      {
+        id: 15,
+        name: "Дархан",
+        district: "Мирзо-Улугбекский",
+        address: "проспект Мустакиллик, 43а",
+        landmark: "В здании магазина OLMA на 3-м этаже, рядом с Университетом физической культуры",
+        floor: "3-й этаж",
+        perks: "Стандартный смарт-зал",
+        schedule: "пн–сб: 07:00 – 21:00",
+        womenHours: "Нету ⛔ (общие часы)"
+      },
+      {
+        id: 16,
+        name: "Ширин",
+        district: "Чиланзарский",
+        address: "Чиланзар 24-й квартал, ул. Ширин 2Д",
+        landmark: "За автобусной остановкой «Ширин», в 9-этажном доме на 1-м этаже, в ряду с аптекой и магазинами",
+        floor: "1-й этаж",
+        perks: "Стандартный смарт-зал",
+        schedule: "пн–сб: 07:00 – 21:00",
+        womenHours: "Нету ⛔ (общие часы)"
+      },
+      {
+        id: 17,
+        name: "Ойбек",
+        district: "Мирабадский",
+        address: "ул. Афросиаб, 10/2",
+        landmark: "Метро Ойбек, кафе «Точка Вкуса»",
+        floor: "1-й этаж",
+        perks: "Стандартный смарт-зал",
+        schedule: "пн–сб: 07:00 – 21:00",
+        womenHours: "Нету ⛔ (общие часы)"
+      }
+    ];
+
+    function renderBranches(list) {
+      const container = document.getElementById('branches-container');
+      if (!container) return;
+      container.innerHTML = '';
+
+      if (list.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column:1/-1; text-align:center; padding:40px; background:#FFF; border-radius:12px; border:1px solid #E2E8F0;">
+            <div style="font-size:36px; margin-bottom:8px;">🔍</div>
+            <div style="font-weight:700; font-size:16px;">Филиал не найден</div>
+            <div style="color:#64748B; font-size:14px; margin-top:4px;">Попробуйте изменить поисковый запрос или сбросить фильтр района.</div>
+          </div>
+        `;
+        return;
+      }
+
+      list.forEach(b => {
+        const card = document.createElement('div');
+        card.className = 'branch-card';
+        card.innerHTML = `
+          <div>
+            <span class="branch-num">№${b.id}</span>
+            <div class="branch-name">${b.name}</div>
+            <div class="branch-district">${b.district} р-н</div>
+
+            <div class="branch-info-row">
+              <strong>📍 Адрес:</strong>
+              <span>${b.address}</span>
+            </div>
+
+            <div class="branch-info-row">
+              <strong>🧭 Ориентир:</strong>
+              <span>${b.landmark}</span>
+            </div>
+
+            <div class="branch-info-row">
+              <strong>🏢 Этаж:</strong>
+              <span>${b.floor}</span>
+            </div>
+
+            <div class="branch-info-row">
+              <strong>⚡ Преимущество:</strong>
+              <span>${b.perks}</span>
+            </div>
+
+            <div class="branch-info-row">
+              <strong>⏰ График:</strong>
+              <span>${b.schedule}</span>
+            </div>
+
+            <div class="branch-info-row">
+              <strong>👩 Жен. часы:</strong>
+              <span style="${b.womenHours.includes('Нету') ? 'color:var(--danger); font-weight:700;' : 'color:var(--success); font-weight:700;'}">${b.womenHours}</span>
+            </div>
+          </div>
+
+          <div>
+            <button class="branch-copy-btn" onclick="copyBranchInfo(${b.id}, this)">
+              <span>📋</span> Скопировать инфо о филиале
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function filterBranches() {
+      const query = (document.getElementById('branch-search').value || '').toLowerCase().trim();
+      
+      const filtered = branchesData.filter(b => {
+        let matchesDistrict = true;
+        if (currentDistrict !== 'all') {
+          if (currentDistrict === 'Чиланзар') {
+            matchesDistrict = b.district.toLowerCase().includes('чиланзар') || b.district.toLowerCase().includes('учтепа');
+          } else {
+            matchesDistrict = b.district.toLowerCase().includes(currentDistrict.toLowerCase());
+          }
+        }
+
+        const matchesQuery = !query || 
+          b.name.toLowerCase().includes(query) ||
+          b.address.toLowerCase().includes(query) ||
+          b.landmark.toLowerCase().includes(query) ||
+          b.district.toLowerCase().includes(query) ||
+          b.floor.toLowerCase().includes(query) ||
+          b.perks.toLowerCase().includes(query);
+        
+        return matchesDistrict && matchesQuery;
+      });
+
+      renderBranches(filtered);
+    }
+
+    function setDistrictFilter(district, btnElement) {
+      currentDistrict = district;
+      
+      const pills = document.querySelectorAll('#district-filters .filter-pill');
+      pills.forEach(p => p.classList.remove('active'));
+      if (btnElement) btnElement.classList.add('active');
+
+      filterBranches();
+    }
+
+    function copyBranchInfo(bId, btnElement) {
+      const b = branchesData.find(item => item.id === bId);
+      if (!b) return;
+      const text = `Филиал №${b.id} ${b.name} (35' Health Club)\nРайон: ${b.district}\nАдрес: ${b.address}\nОриентир: ${b.landmark}\nЭтаж: ${b.floor}\nПреимущество: ${b.perks}\nГрафик работы: ${b.schedule}\nЖенские часы: ${b.womenHours}\nКолл-центр: +998 55 500 11 35`;
+      
+      navigator.clipboard.writeText(text).then(() => {
+        const origHtml = btnElement.innerHTML;
+        btnElement.innerHTML = '✅ <span>Скопировано в буфер!</span>';
+        btnElement.style.background = '#ECFDF5';
+        btnElement.style.borderColor = '#10B981';
+        btnElement.style.color = '#065F46';
+        setTimeout(() => {
+          btnElement.innerHTML = origHtml;
+          btnElement.style.background = '';
+          btnElement.style.borderColor = '';
+          btnElement.style.color = '';
+        }, 2000);
+      }).catch(() => {
+        prompt('Скопируйте информацию о филиале:', text);
+      });
+    }
+
+    /* --------------------------------------------------------------------------
        КОПИРОВАНИЕ ДЛЯ GOOGLE DOCS
        -------------------------------------------------------------------------- */
     function copyForGoogleDocs() {
@@ -1648,6 +2623,8 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
+      calculateSalary();
+      renderBranches(branchesData);
       loadChecklist();
     });
   </script>
